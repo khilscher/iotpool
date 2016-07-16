@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp.PoolPage"
+             BackgroundColor="White">
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style x:Key="labelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="#a8a8a8" />
+        <Setter Property="FontSize" Value="Small" />
+      </Style>
+      <Style x:Key="fieldStyle" TargetType="Label">
+        <Setter Property="TextColor">
+          <OnPlatform x:TypeArguments="Color" iOS="Black" Android="Black" WinPhone="Black" />
+        </Setter>
+        <Setter Property="FontSize" Value="Medium" />
+      </Style>
+      <Style x:Key="fieldView" TargetType="ContentView">
+        <Setter Property="Padding" Value="10,0,0,0" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  
+  
+  <ContentPage.Content>
+    <ScrollView>
+      <StackLayout Padding="10,10,10,10" HorizontalOptions="Start" VerticalOptions="Start">
+        <Label Text="Pool Name:" Style="{StaticResource labelStyle}" />
+        <ContentView Style="{StaticResource fieldView}">
+          <Label Text="{Binding PoolName}" Style="{StaticResource fieldStyle}" />
+        </ContentView>
+        <Label Text="Water Temp:" Style="{StaticResource labelStyle}" />
+        <ContentView Style="{StaticResource fieldView}">
+          <Label x:Name="PoolWaterTempC" Text="{Binding PoolWaterTempC}"
+              Style="{StaticResource fieldStyle}" />
+        </ContentView>
+        <Label Text="Air Temp:" Style="{StaticResource labelStyle}" />
+        <ContentView Style="{StaticResource fieldView}">
+          <Label x:Name="OutsideAirTempC" Text="{Binding OutsideAirTempC}" Style="{StaticResource fieldStyle}" />
+        </ContentView>
+        <Label Text="Pool Power On:" Style="{StaticResource labelStyle}" />
+        <ContentView Style="{StaticResource fieldView}">
+          <Label x:Name="IsPoolPowerOn" Text="{Binding IsPoolPowerOn}"
+              Style="{StaticResource fieldStyle}" />
+        </ContentView>
+        <Label Text="Last Updated:" Style="{StaticResource labelStyle}" />
+        <ContentView Style="{StaticResource fieldView}">
+          <Label x:Name="SampleDateTime" Text="{Binding SampleDateTime}"
+              Style="{StaticResource fieldStyle}" />
+        </ContentView>
+        <Button x:Name="getCurrentPoolDataBtn" Text="Refresh" BorderWidth="1" BorderColor="Black" HorizontalOptions="Start" TextColor="Black">
+        </Button>
+        <Button x:Name="setPoolPowerOnBtn" Text="Power On" BorderWidth="1" BorderColor="Black" HorizontalOptions="Start" TextColor="Black">
+        </Button>
+        <Button x:Name="setPoolPowerOffBtn" Text="Power Off" BorderWidth="1" BorderColor="Black" HorizontalOptions="Start" TextColor="Black">
+        </Button>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>
