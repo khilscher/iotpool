@@ -1,2 +1,2 @@
-# iotpool
-Azure IoT Swimming Pool using Raspberry Pi, Arduino, DS18B20, and IoT Power Relay
+# IoT Pool
+Code for the Azure IoT swimming pool project hosted at https://www.hackster.io/khilscher/azure-iot-swimming-pool-f1a68c
